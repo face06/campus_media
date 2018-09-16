@@ -4,28 +4,35 @@
  */
 
 import React, { Component } from 'react';
-import { StyleSheet, Image, View } from 'react-native';
-import { Player } from 'react-native-audio-stream';
-import { ImageBackground } from '@shoutem/ui';
+import { ScrollView } from 'react-native';
 
+import { SplashScreen } from './src/components';
+
+/**
+ * App class
+ * @extends Component
+ */
 export default class App extends Component {
+
+    /**
+     * App Constructor.
+     */
+    constructor() {
+        super();
+
+        this.state = {
+            isLoading: true
+        };
+    }
+
+    /**
+     * Render view
+     * @returns {*}
+     */
     render() {
-        return (
-            <View style={styles.container}>
-                <Player url={"https://listen.radioking.com/radio/12856/stream/24842"}/>
-                <ImageBackground
-                    styleName="large-portrait"
-                    source={{ uri: 'http://genchi.info/images/recording-studio-wallpaper-15.jpg' }}>
-                    <Image source={{ uri: 'https://campus-media.face06.com/RUN-Logo.png' }} style={{width:200, height: 200}} />
-                </ImageBackground>
-            </View>
-        );
+        if (this.state.isLoading)
+            return (<SplashScreen/>);
+
+        return (<ScrollView/>);
     }
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    }
-});
