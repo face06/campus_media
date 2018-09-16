@@ -5,8 +5,9 @@
 
 import React, { Component } from 'react';
 import { Player } from 'react-native-audio-stream';
+import { Examples } from '@shoutem/ui';
 
-import { SplashScreen } from './src/components';
+import { SplashScreen, Home } from './src/components';
 
 /**
  * App class
@@ -22,7 +23,7 @@ export default class App extends Component {
 
         //this.youtubeStram = new youtubeStream();
         this.state = {
-            isLoading: true
+            isLoading: false
         };
     }
 
@@ -34,6 +35,6 @@ export default class App extends Component {
         if (this.state.isLoading)
             return (<SplashScreen/>);
 
-        return (<Player url={"https://listen.radioking.com/radio/12856/stream/24842"}/>);
+        return (<Home/>);
     }
 }

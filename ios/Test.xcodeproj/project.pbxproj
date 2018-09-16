@@ -62,6 +62,10 @@
 		EE2CE34DD2904285A1B2D2AF /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2256B4BAFFD4B5D8B5F9E2F /* Rubik-MediumItalic.ttf */; };
 		5CC9CE25D0BF41E3B156D7E3 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07C32E530BE1488FA74A835D /* Rubik-Regular.ttf */; };
 		A7EAD967A145468DB7763946 /* libReactNativeAudioStreaming.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB466072E5BE491A9FB11D2C /* libReactNativeAudioStreaming.a */; };
+		E4139EDF23BB4D5F91385930 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DF2AA33984D489A8E18C6B4 /* Feather.ttf */; };
+		118A91786E044368AE81470A /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D4E153D797640C7B946FD56 /* FontAwesome5_Brands.ttf */; };
+		73B55625206342F4AF613F37 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B77492A2DCF94F99BA54022B /* FontAwesome5_Regular.ttf */; };
+		CEA25D1C2980442299F08670 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA88DFE41F248618706CB20 /* FontAwesome5_Solid.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -396,6 +400,10 @@
 		07C32E530BE1488FA74A835D /* Rubik-Regular.ttf */ = {isa = PBXFileReference; name = "Rubik-Regular.ttf"; path = "../node_modules/@shoutem/ui/fonts/Rubik-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		6B552E921D204B9FA61C1EA4 /* ReactNativeAudioStreaming.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeAudioStreaming.xcodeproj"; path = "../node_modules/react-native-audio-stream/ios/ReactNativeAudioStreaming.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		AB466072E5BE491A9FB11D2C /* libReactNativeAudioStreaming.a */ = {isa = PBXFileReference; name = "libReactNativeAudioStreaming.a"; path = "libReactNativeAudioStreaming.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		5DF2AA33984D489A8E18C6B4 /* Feather.ttf */ = {isa = PBXFileReference; name = "Feather.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0D4E153D797640C7B946FD56 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Brands.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B77492A2DCF94F99BA54022B /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Regular.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3CA88DFE41F248618706CB20 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Solid.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -689,6 +697,10 @@
 				B992902781434E47B3DC8420 /* Rubik-Medium.ttf */,
 				D2256B4BAFFD4B5D8B5F9E2F /* Rubik-MediumItalic.ttf */,
 				07C32E530BE1488FA74A835D /* Rubik-Regular.ttf */,
+				5DF2AA33984D489A8E18C6B4 /* Feather.ttf */,
+				0D4E153D797640C7B946FD56 /* FontAwesome5_Brands.ttf */,
+				B77492A2DCF94F99BA54022B /* FontAwesome5_Regular.ttf */,
+				3CA88DFE41F248618706CB20 /* FontAwesome5_Solid.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1161,6 +1173,10 @@
 				CF9925D81CA94B0797EBD4A2 /* Rubik-Medium.ttf in Resources */,
 				EE2CE34DD2904285A1B2D2AF /* Rubik-MediumItalic.ttf in Resources */,
 				5CC9CE25D0BF41E3B156D7E3 /* Rubik-Regular.ttf in Resources */,
+				E4139EDF23BB4D5F91385930 /* Feather.ttf in Resources */,
+				118A91786E044368AE81470A /* FontAwesome5_Brands.ttf in Resources */,
+				73B55625206342F4AF613F37 /* FontAwesome5_Regular.ttf in Resources */,
+				CEA25D1C2980442299F08670 /* FontAwesome5_Solid.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

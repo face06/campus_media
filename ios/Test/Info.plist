@@ -76,6 +76,10 @@
 		<string>Rubik-Medium.ttf</string>
 		<string>Rubik-MediumItalic.ttf</string>
 		<string>Rubik-Regular.ttf</string>
+		<string>Feather.ttf</string>
+		<string>FontAwesome5_Brands.ttf</string>
+		<string>FontAwesome5_Regular.ttf</string>
+		<string>FontAwesome5_Solid.ttf</string>
 	</array>
 </dict>
 </plist>
