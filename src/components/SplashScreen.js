@@ -56,7 +56,7 @@ export default class SplashScreen extends Component {
                     <View style={this.styles.container}>
                         <View>
                             <Image
-                                source={{uri: 'https://campus-media.face06.com/Logo-RUN.png', cache: 'only-if-cached'}}
+                                source={{uri: 'https://campus-media.face06.com/RUN-Logo.png', cache: 'only-if-cached'}}
                                 style={{width: 264, height: 168}}/>
                         </View>
                         <View style={this.styles.loading}>
