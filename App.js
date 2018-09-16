@@ -8,6 +8,7 @@ import { Player } from 'react-native-audio-stream';
 import { Examples } from '@shoutem/ui';
 
 import { SplashScreen, Home } from './src/components';
+import {youtubeStream} from './src/streams/youtube';
 
 /**
  * App class
@@ -18,12 +19,18 @@ export default class App extends Component {
     /**
      * App Constructor.
      */
-    constructor() {
-        super();
-
-        //this.youtubeStram = new youtubeStream();
+    constructor(props) {
+        super(props);
+        this.youtubeStream = new youtubeStream();
+        this.youtubeStream.fillVideoIdList().then(
+            () => this.setState({isLoading: false})
+        ).catch(
+            function (err) {
+                console.log(err);
+            }
+        );
         this.state = {
-            isLoading: false
+            isLoading: true
         };
     }
 
@@ -34,7 +41,8 @@ export default class App extends Component {
     render() {
         if (this.state.isLoading)
             return (<SplashScreen/>);
+        console.log(this.youtubeStream.videoIdList);
 
-        return (<Home/>);
+        return (<Home youtubeStream={this.youtubeStream.videoIdList}/>);
     }
 }

@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {Screen, Title, NavigationBar, ImageBackground, Tile, Subtitle, Divider, ListView} from '@shoutem/ui';
+import {youtubeStream} from "../streams/youtube";
+import SplashScreen from "./SplashScreen";
 
 export default class Home extends Component {
 
     constructor(props) {
         super(props);
+        console.log("PROPS: " + props.videoIdList);
         this.renderRow = this.renderRow.bind(this);
         this.state = {
+            isLoading: true,
             restaurants: [
                 {
                     "name": "Gaspar Brasserie",
@@ -62,6 +66,9 @@ export default class Home extends Component {
     }
 
     render() {
+        if (this.state.isLoading)
+            return (<SplashScreen/>);
+
         const restaurants = this.state.restaurants;
 
         return (
