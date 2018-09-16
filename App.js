@@ -9,6 +9,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Player } from 'react-native-audio-stream';
+import youtubeStream from 'src/streams/youtube';
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,6 +19,12 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component {
+    constructor(props) {
+        super(props);
+
+        //this.youtubeStram = new youtubeStream();
+    }
+
     render() {
         return (
             <Player url={"https://listen.radioking.com/radio/12856/stream/24842"}/>
