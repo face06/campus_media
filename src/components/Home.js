@@ -35,12 +35,12 @@ export default class Home extends Component {
     }
 
     render() {
-        const restaurants = this.state.videoIdList;
+        const videoIdList = this.state.videoIdList;
 
         return (
             <Screen>
                 <NavigationBar
-                    title="Restaurants"
+                    title="Vidéos"
                     styleName="inline"
                 />
                 <ListView
