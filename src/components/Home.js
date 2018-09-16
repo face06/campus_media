@@ -9,7 +9,7 @@ export default class Home extends Component {
 
     constructor(props) {
         super(props);
-
+        console.log("PROPS: " + props.videoIdList);
         this.renderRow = this.renderRow.bind(this);
         this.state = {
             isLoading: true,
@@ -35,7 +35,7 @@ export default class Home extends Component {
     }
 
     render() {
-        const videoIdList = this.state.videoIdList;
+        const restaurants = this.state.videoIdList;
 
         return (
             <Screen>
