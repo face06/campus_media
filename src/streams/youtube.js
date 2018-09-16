@@ -1,24 +1,3 @@
-/*
-    buildApiRequest('GET',
-                '/youtube/v3/channels',
-                {'id': 'UC_mdnj150u1lfPb6hYc6jsQ',
-                 'part': 'snippet,contentDetails,statistics'});
-
-    contentDetails.relatedPlaylists.uploads = playlistId;
-
-    buildApiRequest('GET',
-                '/youtube/v3/playlistItems',
-                {'maxResults': '25',
-                 'part': 'snippet,contentDetails',
-                 'playlistId': 'UU_mdnj150u1lfPb6hYc6jsQ'});
-    ==> LIST OF CHANNELS VIDEOS IN: items[]
-
-    ID:
-        channelID: UC_mdnj150u1lfPb6hYc6jsQ
-        uploadPlaylistId: UU_mdnj150u1lfPb6hYc6jsQ
-        APIKEY: AIzaSyAoC2HHkcC8EQ242hBb6-1GXIEEbW-CK1M
- */
-
 import axios from 'axios';
 import React from "react";
 
@@ -62,9 +41,16 @@ export class youtubeStream {
             that.requestPromise().then(
                 function (result) {
                     result.items.forEach(function (k) {
-                        if (k.id && k.id.videoId) {
-                            that.videoIdList.push(k.id.videoId);
-                        }
+                        let obj = {};
+
+                        if (k.id && k.id.videoId)
+                            obj.id = k.id.videoId;
+                        if (k.snippet && k.snippet.title)
+                            obj.title = k.snippet.title;
+                        if (k.snippet && k.snippet.thumbnails && k.snippet.thumbnails.high
+                            && k.snippet.thumbnails.high.url)
+                            obj.thumbnail = k.snippet.thumbnails.high.url;
+                        that.videoIdList.push(obj);
                     });
                     return resolve();
                 }

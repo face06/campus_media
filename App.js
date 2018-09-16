@@ -21,6 +21,11 @@ export default class App extends Component {
      */
     constructor(props) {
         super(props);
+
+        this.state = {
+            isLoading: true
+        };
+
         this.youtubeStream = new youtubeStream();
         this.youtubeStream.fillVideoIdList().then(
             () => this.setState({isLoading: false})
@@ -29,9 +34,6 @@ export default class App extends Component {
                 console.log(err);
             }
         );
-        this.state = {
-            isLoading: true
-        };
     }
 
     /**
@@ -41,8 +43,7 @@ export default class App extends Component {
     render() {
         if (this.state.isLoading)
             return (<SplashScreen/>);
-        console.log(this.youtubeStream.videoIdList);
 
-        return (<Home youtubeStream={this.youtubeStream.videoIdList}/>);
+        return (<Home videoIdList={this.youtubeStream.videoIdList}/>);
     }
 }
