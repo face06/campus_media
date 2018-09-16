@@ -4,7 +4,7 @@
  */
 
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import { Player } from 'react-native-audio-stream';
 
 import { SplashScreen } from './src/components';
 
@@ -20,6 +20,7 @@ export default class App extends Component {
     constructor() {
         super();
 
+        //this.youtubeStram = new youtubeStream();
         this.state = {
             isLoading: true
         };
@@ -33,6 +34,6 @@ export default class App extends Component {
         if (this.state.isLoading)
             return (<SplashScreen/>);
 
-        return (<ScrollView/>);
+        return (<Player url={"https://listen.radioking.com/radio/12856/stream/24842"}/>);
     }
 }
