@@ -1,5 +1,5 @@
 /**
- * Index app with spash screen
+ * Index application views and routes
  * @author Face06
  */
 
