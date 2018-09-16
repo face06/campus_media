@@ -9,7 +9,7 @@ export default class Home extends Component {
         super(props);
         this.renderRow = this.renderRow.bind(this);
         this.state = {
-            restaurants: [
+            videos: [
                 {
                     "name": "Gaspar Brasserie",
                     "address": "185 Sutter St, San Francisco, CA 94109",
@@ -62,7 +62,7 @@ export default class Home extends Component {
     }
 
     render() {
-        const restaurants = this.state.restaurants;
+        const restaurants = this.state.videos;
 
         return (
             <Screen>
