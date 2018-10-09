@@ -5,8 +5,8 @@ export class youtubeStream {
     constructor() {
         this.videoIdList = [];
         this.apiKey = "AIzaSyAoC2HHkcC8EQ242hBb6-1GXIEEbW-CK1M";
-        //this.channelId = "UC_mdnj150u1lfPb6hYc6jsQ";
-        this.channelId = "UCrQjCrWOS63rBxO15TA5CfQ";
+        this.channelId = "UC_mdnj150u1lfPb6hYc6jsQ";
+        //this.channelId = "UCrQjCrWOS63rBxO15TA5CfQ";
         this.Client = axios.create({
             baseURL: "https://www.googleapis.com/youtube/v3/search",
             timeout: 10000,
@@ -45,6 +45,8 @@ export class youtubeStream {
 
                         if (k.id && k.id.videoId)
                             obj.id = k.id.videoId;
+                        else
+                            return;
                         if (k.snippet && k.snippet.title)
                             obj.title = k.snippet.title;
                         if (k.snippet && k.snippet.thumbnails && k.snippet.thumbnails.high
@@ -52,6 +54,7 @@ export class youtubeStream {
                             obj.thumbnail = k.snippet.thumbnails.high.url;
                         that.videoIdList.push(obj);
                     });
+                    console.log(that.videoIdList);
                     return resolve();
                 }
             ).catch(

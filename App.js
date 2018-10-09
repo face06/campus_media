@@ -2,13 +2,10 @@
  * Index application views and routes
  * @author Face06
  */
-
 import React, { Component } from 'react';
-import { Player } from 'react-native-audio-stream';
-import { Examples } from '@shoutem/ui';
 
-import { SplashScreen, Home } from './src/components';
-import {youtubeStream} from './src/streams/youtube';
+import { SplashScreen, Home, RadioPlayer } from './src/components';
+import { youtubeStream } from './src/streams/youtube';
 
 /**
  * App class
@@ -45,5 +42,6 @@ export default class App extends Component {
             return (<SplashScreen/>);
 
         return (<Home videoIdList={this.youtubeStream.videoIdList}/>);
+        //return (<RadioPlayer />)
     }
 }
