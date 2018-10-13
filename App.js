@@ -2,9 +2,10 @@
  * Index application views and routes
  * @author Face06
  */
-
 import React, { Component } from 'react';
-import { SplashScreen, Home } from './src/components';
+
+import { SplashScreen, Home, RadioPlayer } from './src/components';
+import { youtubeStream } from './src/streams/youtube';
 
 /**
  * App class
@@ -19,9 +20,17 @@ export default class App extends Component {
         super(props);
 
         this.state = {
-            isLoading: true,
-            error: null
+            isLoading: true
         };
+
+        this.youtubeStream = new youtubeStream();
+        this.youtubeStream.fillVideoIdList().then(
+            () => this.setState({isLoading: false})
+        ).catch(
+            function (err) {
+                console.log(err);
+            }
+        );
     }
 
     /**
@@ -32,7 +41,7 @@ export default class App extends Component {
         if (this.state.isLoading)
             return (<SplashScreen/>);
 
-        return (<Home splashScreen={this} />);
+        return (<Home videoIdList={this.youtubeStream.videoIdList}/>);
+        //return (<RadioPlayer />)
     }
-
 }
