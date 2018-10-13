@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { NativeModules, StatusBar, View, Text } from 'react-native';
 
-import { COLOR, ThemeProvider } from 'react-native-material-ui';
+import { COLOR, ThemeContext } from 'react-native-material-ui';
 import Container from '../Components/Container';
-//import MainTabNavigator from '../routes';
+import MainTabNavigator from '../routes';
 
 const UIManager = NativeModules.UIManager;
 
@@ -25,10 +25,11 @@ class App extends Component {
             <Container>
                 <StatusBar backgroundColor="rgba(0, 0, 0, 0.2)" translucent />
                 <View style={{ backgroundColor: COLOR.green500, height: 24 }} />
-                {/*<route.Page
+                <Text>Yes</Text>
+                <route.Page
                     route={route}
                     navigator={navigator}
-                />*/}
+                />
             </Container>
         );
     }
@@ -39,23 +40,10 @@ class App extends Component {
         }
     }
 
-/*    render() {
-        return (
-            <ThemeContext uiTheme={uiTheme}>
-                <Text>Hello</Text>
-                {/!*<MainTabNavigator ref={(nav) => { this.navigator = nav; }} />*!/}
-                {/!* <Navigator
-                    configureScene={App.configureScene}
-                    initialRoute={routes.home}
-                    ref={this.onNavigatorRef}
-                    renderScene={App.renderScene}
-                /> *!/}
-            </ThemeContext>
-        );
-    }*/
-
     render() {
-        return App.renderScene(0, 0)
+        return (
+            <MainTabNavigator ref={(nav) => { this.navigator = nav; }} />
+        );
     }
 }
 
