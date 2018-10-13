@@ -36,8 +36,8 @@ class YoutubeList {
         return new Promise(function (resolve, reject) {
             that.requestPromise().then(
                 function (result) {
-                    result.items.forEach(function (k, index) {
-                        let obj = { key: index };
+                    result.items.forEach(function (k) {
+                        let obj = {};
 
                         if (k.id && k.id.videoId)
                             obj.id = k.id.videoId;
@@ -45,6 +45,8 @@ class YoutubeList {
                             return;
                         if (k.snippet && k.snippet.title)
                             obj.title = k.snippet.title;
+                        if (k.snippet && k.snippet.description)
+                            obj.description = k.snippet.description;
                         if (k.snippet && k.snippet.thumbnails && k.snippet.thumbnails.high
                             && k.snippet.thumbnails.high.url)
                             obj.thumbnail = k.snippet.thumbnails.high.url;

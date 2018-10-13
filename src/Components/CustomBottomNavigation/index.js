@@ -30,7 +30,7 @@ class CustomBottomNavigation extends Component {
                     label="Radio"
                     onPress={() => this.props.parent.setState({active: 'radio'})}
                 />
-                <Text>Oui</Text>
+                <Text>MIDDLE</Text>
                 <BottomNavigation.Action
                     key="bookmark-border"
                     icon="bookmark-border"

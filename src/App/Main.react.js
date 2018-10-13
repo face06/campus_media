@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-import { ScrollView, Image, Text, View } from 'react-native';
-import { Toolbar, Card } from "react-native-material-ui";
+import {ScrollView, Image, Text, View, Linking } from 'react-native';
+import { Toolbar, Card, Button } from "react-native-material-ui";
 
 import YoutubeList from '../BackProcess/YoutubeList';
 import CustomBottomNavigation from '../Components/CustomBottomNavigation';
@@ -47,17 +47,31 @@ class Main extends Component {
 
     renderVideo(video) {
         return (
-            <Card key={video.key}>
-                <Image
-                    style={{width: '100%', height: 200}}
-                    source={{uri: video.thumbnail }}
-                />
-                <View style={{paddingVertical: 5, paddingHorizontal: 10}}>
-                    <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                        { video.title }
-                    </Text>
-                </View>
-            </Card>
+            <View style={{ marginTop: 5 }} key={ video.id }>
+                <Card>
+                    <Image
+                        style={{width: '100%', height: 200}}
+                        source={{uri: video.thumbnail }}
+                    />
+                    <View style={{paddingVertical: 5, paddingHorizontal: 10}}>
+                        <View>
+                            <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                                { video.title }
+                            </Text>
+                            <Text style={{ marginTop: 5 }}>
+                                { video.description }
+                            </Text>
+                        </View>
+                        <View style={{paddingVertical: 10, flex: 1, alignItems: 'flex-end'}}>
+                            <Button
+                                raised primary
+                                text="Voir la Vidéo"
+                                onPress={() => Linking.openURL("https://www.youtube.com/watch?v=" + video.id)}
+                            />
+                        </View>
+                    </View>
+                </Card>
+            </View>
         )
     }
 
@@ -68,7 +82,7 @@ class Main extends Component {
         return (
             <Container>
                 { this.renderToolbar() }
-                <ScrollView keyboardShouldPersistTaps="always" keyboardDismissMode="interactive">
+                <ScrollView automaticallyAdjustContentInsets={true}>
                     { this.state.videosList.map(video => this.renderVideo(video)) }
                 </ScrollView>
                 <CustomBottomNavigation parent={this}/>
