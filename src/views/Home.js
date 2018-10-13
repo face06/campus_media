@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Linking } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {Screen, Title, ImageBackground, NavigationBar, Tile, Text, Subtitle, Divider, ListView, TouchableOpacity, Button, Image} from '@shoutem/ui';
 import {youtubeStream} from "../streams/youtube";
@@ -12,7 +12,6 @@ export default class Home extends Component {
     constructor(props) {
         super(props);
         Home.renderRow = Home.renderRow.bind(this);
-        Home.onVideoPress = Home.onVideoPress.bind(this);
         Home.onNavigateBack = Home.onNavigateBack.bind(this);
         this.state = {
             isLoading: true,
@@ -29,12 +28,6 @@ export default class Home extends Component {
         });
     }
 
-    static onVideoPress() {
-        this.setState({
-            isWatching: true
-        });
-    }
-
     static onNavigateBack() {
         this.setState({
             isWatching: false
@@ -44,7 +37,7 @@ export default class Home extends Component {
     static renderRow(videoIdList) {
         return (
             <View>
-                <TouchableOpacity onPress={Home.onVideoPress}>
+                <TouchableOpacity onPress={() => Linking.openURL("https://www.youtube.com/watch?v=" + videoIdList.id)}>
                     <ImageBackground
                         styleName="large-ultra-wide"
                         source={{ uri: videoIdList.thumbnail }}
