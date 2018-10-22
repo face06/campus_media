@@ -6,6 +6,7 @@ import {
     Player,
     MediaStates
 } from 'react-native-audio-toolkit';
+//import { IceCast } from '../BackProcess/streamMetadata';
 
 import CustomBottomNavigation from '../Components/CustomBottomNavigation';
 import Container from '../Components/Container';

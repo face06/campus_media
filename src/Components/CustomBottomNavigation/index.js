@@ -30,8 +30,9 @@ class CustomBottomNavigation extends Component {
                     label="Radio"
                     onPress={() => this.props.parent.setState({active: 'radio'})}
                 />
-                <Button
-                    text={"Play"}
+                <BottomNavigation.Action
+                    icon={<Icon name="fa-play-circle"/>}
+                    label="Play"
                     onPress={() => this.props.parent.setState({isPlaying: true})}
                 />
                 <BottomNavigation.Action
