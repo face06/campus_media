@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
-import { BottomNavigation, Icon } from "react-native-material-ui";
+import {BottomNavigation, Button, Icon} from "react-native-material-ui";
 
 class CustomBottomNavigation extends Component {
 
@@ -30,7 +30,10 @@ class CustomBottomNavigation extends Component {
                     label="Radio"
                     onPress={() => this.props.parent.setState({active: 'radio'})}
                 />
-                <Text>MIDDLE</Text>
+                <Button
+                    text={"Play"}
+                    onPress={() => this.props.parent.setState({isPlaying: true})}
+                />
                 <BottomNavigation.Action
                     key="bookmark-border"
                     icon="bookmark-border"

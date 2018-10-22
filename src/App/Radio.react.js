@@ -22,7 +22,7 @@ class Radio extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { active: 'radio', isPlaying: true };
+        this.state = { isPlaying: false };
         this.player = new Player("http://streaming.radio.funradio.fr/fun-1-48-192");
     }
 
@@ -30,19 +30,25 @@ class Radio extends Component {
         return (
             <Toolbar
                 key="toolbar"
-                leftElement="menu"
                 onLeftElementPress={() => this.props.navigation.goBack()}
                 centerElement="Campus Média"
             />
         );
     }
 
+    createStream() {
+        this.player = new Player("http://streaming.radio.funradio.fr/fun-1-48-192");
+        this.player.play();
+    }
+
     render() {
+        if (this.state.isPlaying)
+            this.createStream();
+
         return (
             <Container>
                 { this.renderToolbar() }
-                <Button text={"Play"} onPress={() => this.player.play()}/>
-                <Button text={"Pause"} onPress={() => this.player.pause()}/>
+                <Button text={"Pause"} onPress={() => this.player.stop()}/>
                 <CustomBottomNavigation parent={this}/>
             </Container>
         )
